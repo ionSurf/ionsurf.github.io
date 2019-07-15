@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Solar Powered Surveillance System - Javier Prieto Github Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="../../index.html" class="logo"><strong>Javier Prieto</strong> <span>Portfolio</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="websites.html">Websites</a></li>
+                <li><a href="embedded-systems.html">Embedded Systems</a></li>
+                <li><a href="mobile-apps.html">Mobile Apps</a></li>
+                <li><a href="web-apps.html">Web Apps</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="mailto:javier@fiml.co" class="button primary fit">Get in touch</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main" class="alt">
+
+            <!-- One -->
+            <section id="one">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Solar Powered Surveillance System</h1>
+                    </header>
+                    <span class="image main"><img src="../../images/pic11.jpg" alt="" /></span>
+                    <!-- Begin -->
+                    <p>This solar powered surveillance system is a
+                        compilation of many others, and it was the capstone project for the UCSD
+                        California IoT Specialization Program through Coursera. It combines the use of
+                        embedded systems along with modern telecommunications best practices, data
+                        processing, artificial intelligence, electronics and renewable energies. It
+                        makes a great example of the power of the Internet of Things by integrating
+                        diverse technologies into a grid of systems exchanging data between themselves.</p>
+
+                    <h2>Approach</h2>
+
+                    <p>In order to come up with this project, the
+                        following steps were taken:</p>
+
+                    <ol>
+                        <li>
+                            <p>Research major system components</p>
+                        </li>
+
+                        <li>
+                            <p>Research DC components</p>
+                        </li>
+
+                        <li>
+                            <p>Purchase system components</p>
+                        </li>
+
+                        <li>
+                            <p>Build solar station</p>
+                        </li>
+
+                        <li>
+                            <p>Set up DragonBoard 410c</p>
+                        </li>
+                    </ol>
+
+                    <p>A general diagram laying out all the systems
+                        that were going to be connected helped made clear what components were going to
+                        be needed per cluster. This also aided into selecting the most affordable and
+                        ready-to-use components, since this was meant to be a project that would
+                        showcase the program member abilities. it’s important to be careful about
+                        compatibility du to the many flavours of solar panels, solar charger
+                        controllers, batteries and power inverters, not to mention if you want to add
+                        different types of solar panels, fuses, etc.</p>
+
+                    <p>After a prototype layout was set down and a
+                        proper research was made about the components, a Bill Of Materials was done in
+                        order to establish a dependency structure and a place of purchase for each one.
+                        This list breaks exhibits with great detail all the ingredients needed in this
+                        capstone, some of them with notes about crucial information. The majority of
+                        the materials here were bought at Amazon for optimizing time and providers
+                        constraints.</p>
+
+                    <p>As the system was put together, hazardous
+                        situations were avoided by being careful about polarity, overloading components
+                        and weather prone accidents like water leaking or extreme heat. From beginning
+                        to end, the panels, the solar charger controller, the battery and the power
+                        inverter were placed first. Secondly, the desktop along with the LCD monitor,
+                        the keyboard, the mouse, the camera and the lights we put into place. Then, the
+                        ESP32 boards along with its sensors were assembled. Next, all the necessary
+                        software was installed and the amazon account along with its instances and the
+                        GreenGrass Core were setup. Finally, the implementation of AWS “Things” group,
+                        the AWS services like lambdas, the DynamoDB database and the information
+                        permissions were deployed.</p>
+
+                    <h2>Systems Components</h2>
+
+                    <p>As stated above, a BOM was created to
+                        incorporate all the necessary parts for the projects. This list is available <a
+                            href="">here</a>. More information about the most
+                        important components will be now exposed.<sup>
+                            <o:p></o:p>
+                        </sup></p>
+
+                    <h3>Solar Panels</h3>
+
+                    <p>For this exercise, one 25W solar panel was
+                        used. Nonetheless, some between 10W and 50W could be used. Two 10W solar panels
+                        were recommended for the exercise, though it easier to get just one with a
+                        little bit more power than those 2 combined, thus having the possibility to
+                        evolve into a 50W solar panel system. This panel gives a VOC ( Open Circuit
+                        Voltage ) of 21.6V and an ISC ( Short Circuit Current ) of 1.22 A. The original
+                        recipe suggested a VOC of 20,6 and an ISC of 1.38 A if connected in parallel.
+                        It’s important to mention that the more amperage we have, the faster the
+                        batteries will be charged, thus keeping a more stable voltage.</p>
+
+                    <h3>Solar Charge Controller</h3>
+
+                    <p>The solar charge controller has a 20A max
+                        output, with USB ports too. It can hold up to 12V or 24V depending on the
+                        settings. This is actually a very affordable and good controller for our
+                        purposes.</p>
+
+                    <h3>Power Inverter</h3>
+
+                    <p>A standard car power inverter was selected to
+                        source the station. It can provide up to 300W, connecting a 12V DC power source
+                        and turning it into a 110AC. It comes with a 4.2A Dual USB charging ports.</p>
+
+                    <h3>Battery</h3>
+
+                    <p>The system’s battery is a 12V 20AH one,
+                        meaning it can give up to 20A per hour. This must be taken into consideration
+                        while thinking about the charge controller and the power inverter, thus making
+                        sure that it doesn’t overload by the payload and it doesn’t drain too fast. An
+                        easy calculation summing up the approximate power consumed by each element in
+                        the system can give you a fair estimate.</p>
+
+                    <h2>Assembly</h2>
+
+                    <h3>Solar Energy Grid</h3>
+
+                    <p>Depending on your calculations, solar panels
+                        should be set either in parallel for more current or in series for more
+                        voltage. For the sake of this exercise, only one will be used, but if two were
+                        to be coupled, they’ll definitely be in parallel, thus giving more amps to the
+                        controller. Cables should be connected using the ring connectors, that’ll
+                        simplify the screwing. If using different cable colors than black and red, make
+                        sure you remember which one is the positive and the negative end.</p>
+
+                    <p>The panels should be attached to the mobile
+                        box on the top using screws, keeping together their cables with either tape or
+                        a plastic zip belt that should be also tied up to the box. Making a small hole
+                        big enough for the cables to go through is also a good idea. </p>
+
+                    <p>Only one pair of cables should run from the
+                        panel grid arrangement to the charge controlled, taking polarity into
+                        consideration. Connect the positive cable from the panel grid into the positive
+                        input of the charge controller and do the same for the negative end.</p>
+
+                    <p>The battery, the inverter and the charge
+                        controller are meant to live inside the box because that’ll keep them safe and
+                        dry. The battery must be connected to the charge controller too, using the
+                        positive end for the positive input of the controller and the negative end to
+                        the negative probe of the controller. Next, the battery must be connected to
+                        the power inverter, tying up positive to positive and negative to negative.
+                        It’s very important to know if the battery comes charged or not. Sometimes they
+                        do and might give a shock.</p>
+
+                    <p>After all is set, it’s a good idea to check
+                        all connections using a multimeter. This phase of the installation is finished
+                        by connecting an outlet to the power inverter.</p>
+
+                    <h3>Remote Desktop</h3>
+
+                    <p>The remote desktop consists of the
+                        DragonBoard, the LCD screen, the mouse, the keyboard, the camera, the sensors
+                        attached to the mezzanine and the exterior lights. This section is began by
+                        connecting the DragonBoard. Attach the LCD screen to the DragonBoard using the
+                        HDMI cable, then the keyboard, the mouse and the camera using their respective
+                        USB cables. Lastly, connect the board’s AC/DC power converter to the board and
+                        then to the power outlet. Press the on button.</p>
+
+                    <p>Check that the DragonBoard is actually on and
+                        that it’s running smoothly in case there’s an OS installed. Otherwise, that’ll
+                        be done later. Then, connect the lights to the power outlet and turn them on
+                        just to check if they are working properly.</p>
+
+                    <h3>IoT Units</h3>
+
+                    <p>The ESP32 units are meant to be connected with
+                        the humidity, temperature, light and sound sensors.</p>
+
+                    <h2>Installation</h2>
+
+                    <ol>
+                        <li>DragonBoard Setup</li>
+                        <ol>
+                            <li>DragonBoard connecting</li>
+                            <li>DragonBoard OS prepping</li>
+                            <li>Apps and libraries</li>
+                        </ol>
+                        <li>Peripherals Setup</li>
+                        <ol>
+                            <li>Mezzanine</li>
+                            <li>Peripherals</li>
+                            <ol>
+                                <li>Sensors</li>
+                                <li>Camera</li>
+                                <li>Testing</li>
+                            </ol>
+                        </ol>
+                        <li>ESP32 Things Setup</li>
+                        <ol>
+                            <li>AWS RTOS Setup</li>
+                        </ol>
+                        <li>Amazon Services Setup I - AWS Services SignUp</li>
+                        <ol>
+                            <li>Account setup</li>
+                            <li>Roles Setup</li>
+                            <li>EC2 Instance Setup</li>
+                        </ol>
+                        <li>Amazon Services Setup II - GreenGrass Core</li>
+                        <ol>
+                            <li>GreenGrass Core Download</li>
+                            <li>GreenGrass Core Installation</li>
+                        </ol>
+                        <li>Amazon Services Setup III - Integrating Services</li>
+                        <ol>
+                            <li>IoT Things Group Setup</li>
+                            <li>AWS Lambda and Gateways Setup</li>
+                            <li>AWS DynamoDB Setup</li>
+                            <li>NodeJS Web Server Setup</li>
+                        </ol>
+                    </ol>
+
+                    <h2>Running and Troubleshooting</h2>
+
+                    <p>
+                        <o:p>&nbsp;</o:p>
+                    </p>
+
+                    <h2>References</h2>
+
+                    <p>
+                        <o:p>&nbsp;</o:p>
+                    </p>
+
+                    <!-- End -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="inner">
+                <section>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="6"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                            <li><input type="reset" value="Clear" /></li>
+                        </ul>
+                    </form>
+                </section>
+                <section class="split">
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-envelope"></span>
+                            <h3>Email</h3>
+                            <a href="#">javier@fiml.co</a>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-phone"></span>
+                            <h3>Phone</h3>
+                            <span>+1 (313) 266 3461</span>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="contact-method">
+                            <span class="icon solid alt fa-home"></span>
+                            <h3>Address</h3>
+                            <span>2134 Morrell<br />
+                            Detroit, MI, 48209<br />
+                            United States of America</span>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Untitled</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+
+</body>
+
+</html>

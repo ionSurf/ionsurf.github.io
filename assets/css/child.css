@@ -1,0 +1,25 @@
+ul.stack {
+    list-style: none;
+    width: inherit;
+    height: inherit;
+    clear: both;
+    display: flex;
+    padding-left: 0px;
+}
+ul.stack li {
+    float: left;
+    padding-right: 1em;
+}
+ul.stack li a {
+    border-bottom: none;
+}
+ul.stack li a img {
+    opacity: .9;
+}
+ul.stack li a:hover img {
+    opacity: 1;
+}
+
+section .content .inner p {
+    /*text-align: justify;*/
+}
