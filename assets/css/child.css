@@ -23,3 +23,6 @@ ul.stack li a:hover img {
 section .content .inner p {
     /*text-align: justify;*/
 }
+section.fragment .inner header,  section.fragment .inner p{
+    color: #FFF;
+}
