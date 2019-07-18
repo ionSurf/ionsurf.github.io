@@ -29,3 +29,6 @@ section.fragment .inner header,  section.fragment .inner p{
 section.style2 {
     background-color:#8d82c4;
 }
+#header.alt.style2  {
+    background-color: #000;
+}
