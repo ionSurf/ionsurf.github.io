@@ -25,13 +25,12 @@ section .content .inner p {
 }
 section.fragment .inner header,  section.fragment .inner p{
     color: #8d82c4;
-    background-color: #FFF;
 }
 section.style2 {
     background-color:#8d82c4;
 }
 #header.alt.style2  {
-    background-color: #000;
+
 }
 #main {
     background-color: #FFF;
