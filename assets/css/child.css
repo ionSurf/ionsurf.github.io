@@ -1,4 +1,4 @@
-ul.stack {
+/*ul.stack {
     list-style: none;
     width: inherit;
     height: inherit;
@@ -9,7 +9,7 @@ ul.stack {
 ul.stack li {
     float: left;
     padding-right: 1em;
-}
+}*/
 ul.stack li a {
     border-bottom: none;
 }
