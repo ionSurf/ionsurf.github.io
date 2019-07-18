@@ -24,7 +24,7 @@ section .content .inner p {
     /*text-align: justify;*/
 }
 section.fragment .inner header,  section.fragment .inner p{
-    color: #8d82c4;
+    color: #FFF;
 }
 section.style2 {
     background-color:#8d82c4;
